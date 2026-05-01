@@ -25,6 +25,7 @@ export default function App() {
     m: 0,
     s: 0,
   });
+  const [showHearts, setShowHearts] = useState(true);
 
   const audioRef = useRef(null);
 
@@ -80,6 +81,7 @@ export default function App() {
 
     setShowLetter(true);
     setShowFireworks(true);
+    setShowHearts(false);
 
     if (audioRef.current) {
       audioRef.current.play().catch((e) => console.log(e));
@@ -89,31 +91,32 @@ export default function App() {
   return (
     <div>
       <Sparkle />
-      <HeartConfetti />
-      <FloatingHearts />
-      <TwinklingStars />
+      {showHearts && <HeartConfetti />}
+      {showHearts && <FloatingHearts />}
 
       <audio ref={audioRef} loop>
         <source src={music} type="audio/mpeg" />
       </audio>
 
-      <Canvas style={{ height: "450px" }}>
-        <ambientLight intensity={1} />
-        <pointLight position={[10, 10, 10]} />
-        <TwinklingStars3D count={400} />
-        <OrbitControls enableZoom={false} />
-        <Crown />
-        <Carousel />
-      </Canvas>
+      <div style={{ width: "100%", maxWidth: "600px", margin: "0 auto" }}>
+        <Canvas style={{ height: "clamp(250px, 35vw, 450px)", width: "100%" }}>
+          <ambientLight intensity={1} />
+          <pointLight position={[10, 10, 10]} />
+          <TwinklingStars3D count={window.innerWidth < 768 ? 200 : 400} />
+          <OrbitControls enableZoom={false} />
+          <Crown />
+          <Carousel />
+        </Canvas>
+      </div>
 
-      <h1 className="title">
+      <h1 className="title" style={showLetter ? { animation: "blink 1s step-end infinite" } : {}}>
         ❤️ Happy Birthday My Beautiful Wife ❤️
       </h1>
 
       <CountdownTimer />
       <Countdown />
 
-      <div style={{ textAlign: "center", marginTop: "30px" }}>
+      <div style={{ textAlign: "center", marginTop: "20px", padding: "0 10px 40px" }}>
         {isUnlocked ? (
           <button
             className="button"

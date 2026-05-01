@@ -63,31 +63,26 @@ export default function Fireworks() {
       }
     }
 
-    // Heavy initial bursts
-    for (let i = 0; i < 12; i++) {
+    // Reduced initial bursts
+    for (let i = 0; i < 6; i++) {
       setTimeout(() => {
         if (!isRunning) return;
         createBurst(
           Math.random() * canvas.width,
           Math.random() * (canvas.height * 0.65) + 90
         );
-      }, i * 80);
+      }, i * 150);
     }
 
-    // Continuous bursts (music ke end tak)
+    // Reduced continuous bursts
     const burstInterval = setInterval(() => {
       if (!isRunning) return;
 
-      // 2 bursts at once for more intensity
       createBurst(
         Math.random() * canvas.width,
         Math.random() * (canvas.height * 0.6) + 80
       );
-      createBurst(
-        Math.random() * canvas.width,
-        Math.random() * (canvas.height * 0.55) + 120
-      );
-    }, 140);
+    }, 400);
 
     function animate() {
       if (!isRunning) return;

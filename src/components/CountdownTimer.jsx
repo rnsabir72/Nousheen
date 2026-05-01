@@ -33,12 +33,12 @@ export default function CountdownTimer() {
   return (
     <div style={{
       textAlign: "center",
-      margin: "25px 0",
-      fontSize: "18px",
+      margin: "15px 10px",
+      fontSize: "clamp(12px, 3vw, 18px)",
       letterSpacing: "1px"
     }}>
-      <p style={{ marginBottom: "8px", opacity: 0.9 }}>Next Birthday in</p>
-      <div style={{ fontSize: "26px", fontWeight: "bold", color: "#ffd700" }}>
+      <p style={{ marginBottom: "6px", opacity: 0.9 }}>Next Birthday in</p>
+      <div style={{ fontSize: "clamp(18px, 6vw, 26px)", fontWeight: "bold", color: "#ffd700" }}>
         {timeLeft.days}d : {timeLeft.hours}h : {timeLeft.minutes}m : {timeLeft.seconds}s
       </div>
     </div>
