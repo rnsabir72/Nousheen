@@ -1,0 +1,169 @@
+body {
+  margin: 0;
+  overflow-x: hidden;
+  background: radial-gradient(circle at center, #000000, #ee48ca);
+  font-family: Georgia, serif;
+  color: white;
+  cursor: none;
+}
+
+.title {
+  font-size: 50px;
+  text-align: center;
+  text-shadow: 0 0 25px #ff99cc;
+  margin-top: 20px;
+}
+
+.button {
+  background: linear-gradient(45deg, #ff4e8b, #ff99cc);
+  border: none;
+  padding: 15px 35px;
+  border-radius: 40px;
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 0 20px #ff69b4;
+  transition: 0.3s;
+}
+
+.button:hover {
+  transform: scale(1.1);
+}
+
+.sparkle {
+  position: fixed;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: sparkleFade 1s forwards;
+  z-index: 9999;
+}
+
+@keyframes sparkleFade {
+  0% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(2.5) rotate(180deg);
+  }
+}
+
+.heart {
+  position: fixed;
+  z-index: 9998;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.5));
+}
+
+.heart::before,
+.heart::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  border-radius: 50%;
+}
+
+.heart::before {
+  top: -50%;
+  left: 0;
+}
+
+.heart::after {
+  top: 0;
+  left: 50%;
+}
+
+/* Twinkling Stars */
+.twinkle-star {
+  position: fixed;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1;
+  box-shadow: 0 0 6px #fff;
+  animation: twinkle 3s infinite ease-in-out;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+
+/* Existing styles (keep these) */
+.title {
+  font-size: 50px;
+  text-align: center;
+  text-shadow: 0 0 25px #ff99cc;
+  margin-top: 20px;
+}
+
+.button {
+  background: linear-gradient(45deg, #ff4e8b, #ff99cc);
+  border: none;
+  padding: 15px 35px;
+  border-radius: 40px;
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 0 20px #ff69b4;
+  transition: 0.3s;
+}
+
+.button:hover {
+  transform: scale(1.1);
+}
+
+.sparkle {
+  position: fixed;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: sparkleFade 1s forwards;
+  z-index: 9999;
+}
+
+@keyframes sparkleFade {
+  0% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(2.5) rotate(180deg);
+  }
+}
+
+/* Heart styles (keep these) */
+.heart {
+  position: fixed;
+  z-index: 9998;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.5));
+}
+
+.heart::before,
+.heart::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  border-radius: 50%;
+}
+
+.heart::before {
+  top: -50%;
+  left: 0;
+}
+
+.heart::after {
+  top: 0;
+  left: 50%;
+}
